@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de Gestão de Estoque</title>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    
+</head>
+<body>
+    <div id="game-container">
+        <h1>Simulação de Gestão de Estoque</h1>
+        <div class="form-group">
+            <label for="reorder-point">Ponto de Pedido Automático:</label>
+            <input type="number" id="reorder-point" value="20">
+        </div>
+        <div class="form-group">
+            <label for="max-order">Nível Máximo de Estoque:</label>
+            <input type="number" id="max-order" value="100">
+        </div>
+        <button onclick="startRound()">Iniciar Rodada</button>
+        <div id="stock-info"></div>
+        <div id="orders-in-transit"></div>
+        <div class="chart-container">
+            <canvas id="stockChart"></canvas>
+        </div>
+        <div class="form-group">
+            <label for="custom-order">Pedido Avulso:</label>
+            <input type="number" id="custom-order" value="10">
+            <button onclick="placeOrder(parseInt(document.getElementById('custom-order').value))">Fazer Pedido</button>
+        </div>
+        
+    </div>
+
+    <script src="static/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
